@@ -15,7 +15,7 @@ function ToDoApp({ name, weather, toDos }) {
       <h1>Welcome to {name}'s To-Do List</h1>
 
       {/* Render weather information */}
-      <h2>The weather in {currentCity} is {description} with a temperature of {temperature} degrees fahrenheit.</h2>
+      <h2>The weather in {weather.currentCity} is {weather.description} with a temperature of {weather.temperature} degrees fahrenheit.</h2>
     </div>
   );
 }

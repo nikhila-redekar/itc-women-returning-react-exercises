@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 import ToDoApp from './ToDoApp';
@@ -27,21 +27,9 @@ root.render(
   document.getElementById('root')
 );
 
-export default ToDoApp;*/
+export default ToDoApp;
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Counter from './counter'; // Import the Counter component
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Counter Example</h1>
-      <Counter /> {/* Render the Counter component */}
-    </div>
-  );
-}
-export default App;
 
 //ReactDOM.render(
   //<React.StrictMode>
