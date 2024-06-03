@@ -4,7 +4,7 @@ export default ToDoApp;
 // Define the ToDoApp component
 function ToDoApp({ name, weather, toDos }) {
   // Destructure weather object
-  const { currentCity, description, temperature } = weather;
+//   const { currentCity, description, temperature } = weather;
 
   // Log each todo to the console
   toDos.forEach(todo => console.log(todo));

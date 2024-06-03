@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import ReactDOM from 'react-dom';
 import ToDoApp from './ToDoApp';
+import Counter from './counter'; // Import the Counter component
+import Hello from './Hello';
+import SignUpForm from './SignUpForm';
 
 const weatherData = {
   currentCity: "Cleveland",
@@ -18,17 +20,17 @@ const toDosList = [
   "practice JavaScript",
 ];
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
-  <React.StrictMode>
-    <ToDoApp name="John" weather={weatherData} toDos={toDosList} />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-export default ToDoApp;
-
+const App = () => {
+  return(
+    <div>
+      <ToDoApp name = "John" weather = {weatherData} toDos={toDosList}/>
+      <Counter/>
+      <Hello/>
+      <SignUpForm/>
+    </div>
+  );
+}
+ export default App;
 
 
 //ReactDOM.render(
