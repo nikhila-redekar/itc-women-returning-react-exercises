@@ -4,6 +4,8 @@ import ToDoApp from './ToDoApp';
 import Counter from './counter'; // Import the Counter component
 import Hello from './Hello';
 import SignUpForm from './SignUpForm';
+import ToDoList from './ToDoList';
+import ToDo from './Todo';
 
 const weatherData = {
   currentCity: "Cleveland",
@@ -27,6 +29,7 @@ const App = () => {
       <Counter/>
       <Hello/>
       <SignUpForm/>
+      <ToDoList/>
     </div>
   );
 }

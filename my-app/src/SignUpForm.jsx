@@ -130,7 +130,7 @@ const SignUpForm = () => {
           />
         </label>
         <br />
-        <label>
+        <label>Date of Birth:
         <input type="Date" name="date" value={formData.date} onChange={handleChange}/>
 
         </label>
@@ -152,7 +152,8 @@ const SignUpForm = () => {
         <p>First Name: {formData.firstName}</p>
         <p>Last Name: {formData.lastName}</p>
         <p>Email: {formData.email}</p>
-        <p>Password: {formData.password}</p>
+        {/*<p>Password: {formData.password}</p>*/}
+        <p>Date of Birth:{formData.date}</p>
       </div>
     </div>
   );
