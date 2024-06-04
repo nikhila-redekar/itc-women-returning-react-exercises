@@ -6,6 +6,11 @@ import Hello from './Hello';
 import SignUpForm from './SignUpForm';
 import ToDoList from './ToDoList';
 import ToDo from './Todo';
+import ComponentA from './ComponentA';
+import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
+import { useState } from "react";
+
 
 const weatherData = {
   currentCity: "Cleveland",
@@ -22,7 +27,13 @@ const toDosList = [
   "practice JavaScript",
 ];
 
+
 const App = () => {
+  const [user] = useState({
+    username: 'timk',
+    firstName: 'tim',
+    lastName: 'kellogg'
+  });
   return(
     <div>
       <ToDoApp name = "John" weather = {weatherData} toDos={toDosList}/>
@@ -30,8 +41,10 @@ const App = () => {
       <Hello/>
       <SignUpForm/>
       <ToDoList/>
+      <ComponentA user={user} />
     </div>
   );
+  
 }
  export default App;
 

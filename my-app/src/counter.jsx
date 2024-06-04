@@ -27,7 +27,8 @@ function Counter() {
 //}
 
 //export default Counter;
-import React, { useState, useEffect } from "react";
+
+/*import React, { useState, useEffect } from "react";
 
 const Counter = ({ initialCount = 0 }) => {
   const [count, setCount] = useState(initialCount);
@@ -67,4 +68,57 @@ const Counter = ({ initialCount = 0 }) => {
   );
 };
 
+export default Counter;*/
+
+import React, { useState, useEffect } from "react";
+
+const Counter = ({ initialCount = 0 }) => {
+  const [count, setCount] = useState(initialCount);
+  const [isModified, setIsModified] = useState(false);
+  const [isAboveTen, setIsAboveTen] = useState(false);
+
+  useEffect(() => {
+    // Run once after component mount
+    const storedCount = Number(localStorage.getItem('count'));
+    if (!isNaN(storedCount)) {
+      setCount(storedCount);
+    }
+  }, []); // Empty dependency array ensures the effect runs only once after mount
+
+  useEffect(() => {
+    setIsAboveTen(count > 10);
+    localStorage.setItem('count', count);
+  }, [count]);
+
+  const increment = () => {
+    if (count < 20) {
+      setCount(count + 1);
+      setIsModified(true);
+    }
+  };
+
+  const decrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+      setIsModified(true);
+    }
+  };
+
+  const reset = () => {
+    setCount(initialCount);
+    setIsModified(false);
+    localStorage.setItem('count', initialCount);
+  };
+
+  return (
+    <div>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      {isModified && <button onClick={reset}>Reset</button>}
+      <div style={{ color: isAboveTen ? "red" : "black" }}>{count}</div>
+    </div>
+  );
+};
+
 export default Counter;
+
