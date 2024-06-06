@@ -14,6 +14,7 @@ import TypesExample from './TypesExample';
 import navB from './navbar';
 import CounterM from './usememo'
 import CardExample from './cardexample';
+import {BrowserRouter, Router, Route, Routes, Link, NavLink} from 'react-router-dom';
 
 
 const weatherData = {
@@ -52,6 +53,24 @@ const App = () => {
       <CounterM/> 
   <navB/>
       <CardExample/>*/}
+      <nav>
+      <ul>  
+    <li>  
+    <Link to="/">Home</Link>  
+    </li>  
+    <li>  
+    <Link to="/about">About Me</Link>  
+    </li>  
+    <li>  
+    <Link to="/jeopardy">Jeopardy</Link>  
+    </li>  
+</ul> 
+      </nav>
+      <Routes>
+      <Route path='/' element={<h1>This is a home page</h1>}/>
+      <Route path='/about' element={<h1>This is a about me section</h1>}/>
+      <Route path='/jeopardy' element={<h1>This is a jeopardy app section</h1>}/>
+      </Routes>
     </div>
   );
   
